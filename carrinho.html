@@ -1,0 +1,328 @@
+<!--    
+
+    /$$ /$$    /$$                /$$$$$$             /$$$$$$   /$$                                                       /$$ /$$   
+   /$$/| $$   | $$               /$$__  $$           /$$__  $$ | $$                                                      /$$/|  $$  
+  /$$/ | $$   | $$ /$$$$$$/$$$$ | $$  \__/  /$$$$$$ | $$  \__//$$$$$$   /$$  /$$  /$$  /$$$$$$   /$$$$$$   /$$$$$$      /$$/  \  $$ 
+ /$$/  |  $$ / $$/| $$_  $$_  $$|  $$$$$$  /$$__  $$| $$$$   |_  $$_/  | $$ | $$ | $$ |____  $$ /$$__  $$ /$$__  $$    /$$/    \  $$
+|  $$   \  $$ $$/ | $$ \ $$ \ $$ \____  $$| $$  \ $$| $$_/     | $$    | $$ | $$ | $$  /$$$$$$$| $$  \__/| $$$$$$$$   /$$/      /$$/
+ \  $$   \  $$$/  | $$ | $$ | $$ /$$  \ $$| $$  | $$| $$       | $$ /$$| $$ | $$ | $$ /$$__  $$| $$      | $$_____/  /$$/      /$$/ 
+  \  $$   \  $/   | $$ | $$ | $$|  $$$$$$/|  $$$$$$/| $$       |  $$$$/|  $$$$$/$$$$/|  $$$$$$$| $$      |  $$$$$$$ /$$/      /$$/  
+   \__/    \_/    |__/ |__/ |__/ \______/  \______/ |__/        \___/   \_____/\___/  \_______/|__/       \_______/|__/      |__/   
+                                                                                                                                    
+                                                                                                                                    
+     Nos siga em nossa rede social:  https://www.instagram.com/vm_software/                                                                                                                               
+                                                                                                                                   
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="carrinho.css">
+    <title>Carrinho – MABABY</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const ref = params.get('ref');
+        console.log(ref); // joao
+        localStorage.setItem('refVendedor', ref);
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="font-sans bg-gray-50">
+    <style>
+         .cart-link {
+            position: relative;
+            color: white;
+            font-size: 20px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -3px;
+            right: -10px;
+            background: red;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 999px;
+            line-height: 1;
+        }
+    </style>
+
+<!-- ====================== HEADER ====================== -->
+<header class="sticky top-0 z-50 bg-white shadow-md">
+
+    <!-- Top Bar -->
+    <div style="background: linear-gradient(180deg, #048061, #048061);" class="text-white py-1 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-2 md:mb-0">
+                <a href="index.html"><img src="assets/logoHeader.webp" alt="MABABY Logo" class="h-6"></a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="index.html#faq" class="text-sm hover:text-blue-200">Dúvidas Frequentes</a>
+                <a href="index.html#Contato" class="text-sm hover:text-blue-200">Contato</a>
+                <a href="index.html#Jobs" class="text-sm hover:text-blue-200">Trabalhe Conosco</a>
+            </div>
+            <div class="flex items-center space-x-4 mt-2 md:mt-0">
+                <a target="_blank" href="https://www.instagram.com/mababydistribuidora/" class="text-white hover:text-blue-200">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="carrinho.html" class="cart-link text-white hover:text-blue-200">
+                  <i class="fas fa-shopping-cart"></i>
+                  <span class="cart-count">3</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="bg-white py-1 px-4">
+        <div class="container mx-auto">
+            <ul class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
+                <li class="flex space-x-4">
+                    <a href="index.html#Historia" class="block px-4 py-1 text-black-800">A MABABY</a>
+                    <a href="index.html#Diferenciais" class="block px-4 py-1 text-black-800">DIFERENCIAIS</a>
+                    <a href="catalogo.html" class="block px-4 py-1 text-black-800">PRODUTOS</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</header>
+
+<!-- ====================== CONTEÚDO PRINCIPAL ====================== -->
+<main class="main">
+  <div class="container mx-auto text-center">
+    <h2 class="titleCarrinho">Meu Carrinho</h2>
+
+    <div class="containerProdutos">
+      <!-- Itens do carrinho serão carregados aqui via JavaScript -->
+    </div>
+    <br/>
+    <button type="button" class="comprarAllItemBtn">Comprar todos </button>
+  </div>
+</main>
+
+
+
+<!-- ====================== FOOTER ====================== -->
+<footer style="background: linear-gradient(180deg, #048061, #048061);" class="text-white pt-12 pb-6 px-4">
+    <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
+
+            <div class="md:w-1/3">
+                <h3 class="text-xl font-bold mb-4">A MABABY</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html#Historia" class="hover:text-yellow-500 transition duration-300">Quem Somos</a></li>
+                    <li><a href="index.html#Notícia" class="hover:text-yellow-500 transition duration-300">Notícias</a></li>
+                    <li><a href="index.html#Contato" class="hover:text-yellow-500 transition duration-300">Contato</a></li>
+                    <li><a href="index.html#Jobs" class="hover:text-yellow-500 transition duration-300">Trabalhe Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="md:w-1/3">
+                <h3 class="text-xl font-bold mb-4">Atendimento ao Cliente</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-start"><i class="fas fa-phone-alt mt-1 mr-2 text-yellow-500"></i><span>+55 14 99814-0452</span></li>
+                    <li class="flex items-start"><i class="fas fa-envelope mt-1 mr-2 text-yellow-500"></i><span>contato@mababydistribuidora.com.br</span></li>
+                    <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-2 text-yellow-500"></i><span>Av. Gupe, 10767 - Barueri - SP</span></li>
+                    <li class="flex items-start"><i class="fas fa-clock mt-1 mr-2 text-yellow-500"></i><span>Segunda a Sexta: 8h às 18h</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="border-white my-6">
+
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <p>© 2025 MABABY – Todos os direitos reservados</p>
+            </div>
+            
+            <div class="mb-4 md:mb-0">
+                <span>Desenvolvido por: <a href="https://www.instagram.com/vm_software/" target="_blank">vm_software</a></span>
+            </div>
+
+            <div class="flex space-x-4">
+                <a target="_blank" href="https://api.whatsapp.com/send/?phone=5514998140452" class="text-white hover:text-yellow-500 transition duration-300">
+                    <i class="fab fa-whatsapp fa-lg"></i>
+                </a>
+                <a target="_blank" href="https://www.instagram.com/mababydistribuidora/" class="text-white hover:text-yellow-500 transition duration-300">
+                    <i class="fab fa-instagram fa-lg"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- load de itens no carronho-->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const itens = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const cartCount = document.querySelector('.cart-count');
+    const titleCarrinho = document.querySelector('.titleCarrinho');
+
+    if (cartCount) {
+      cartCount.innerText = itens.length;
+      titleCarrinho.innerText = `Você tem ${itens.length} item(s) no seu carrinho.`;
+
+      // opcional: esconder quando estiver vazio
+      if (itens.length === 0) {
+        cartCount.style.display = 'none';
+      }
+    }
+  });
+</script>
+
+<!-- função para mapear os pedidos-->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        renderCarrinho();
+    });
+
+    function renderCarrinho() {
+        const carrinho = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const container = document.querySelector('.containerProdutos');
+
+        if (!container) return;
+
+        // se estiver vazio
+        if (carrinho.length === 0) {
+            container.innerHTML = '<p>Seu carrinho está vazio</p>';
+            return;
+        }
+
+        container.innerHTML = carrinho.map(item => `
+        <div class="pedido" data-codigo="${item.codigo}">
+            <div class="imgPedido">
+                <img src="assets/catalogo/produtos/mamadeiras/${item.codigo}.webp" alt="pedido imagem">
+            </div>
+
+            <div class="infoPedido">
+                <h3>${item.nome}</h3>
+                <p>Codigo: </p><p class='code'>${item.codigo}</p>
+                <p class='quantidade'>Quantidade: ${item.quantidade}</p>
+            </div>
+
+            <div class="acoesPedido">
+                <button type="button" class="removerBtn">Remover</button>
+                <button type="button" class="comprarItemBtn">Comprar</button>
+            </div>
+        </div>
+         
+        `).join('');
+    }
+</script>
+<!-- compra e remoção individual-->
+ <script>
+    document.addEventListener('click', function (event) {
+
+        const removerBtn = event.target.closest('.removerBtn');
+        if (removerBtn) {
+            const pedidoDiv = removerBtn.closest('.pedido');
+            const codigoProduto = pedidoDiv.dataset.codigo;
+
+            let carrinho = JSON.parse(localStorage.getItem('cartItems')) || [];
+            carrinho = carrinho.filter(item => item.codigo !== codigoProduto);
+
+            localStorage.setItem('cartItems', JSON.stringify(carrinho));
+
+            renderCarrinho();
+            atualizarBadgeCarrinho();
+            return;
+        }
+    });
+    document.addEventListener('click', function (event) {
+
+    const comprarItemBtn = event.target.closest('.comprarItemBtn');
+    if (!comprarItemBtn) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+
+    const pedidoDiv = comprarItemBtn.closest('.pedido');
+    const codigoProduto = pedidoDiv.dataset.codigo;
+
+    let carrinho = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    const item = carrinho.find(i => String(i.codigo) === String(codigoProduto));
+    if (!item) {
+        console.error('Produto não encontrado no carrinho');
+        return;
+    }
+
+    const mensagem =
+`Olá, tudo bem? Efetuei meu pedido pelo site:
+
+Segue informações:
+
+*Produto:* ${item.nome}
+*Código:* ${item.codigo}
+*Quantidade:* ${item.quantidade}`;
+
+    const whatsappURL =
+        `https://wa.me/5514998140452?text=${encodeURIComponent(mensagem)}`;
+
+    // 🗑️ Remove o item ANTES de sair
+    carrinho = carrinho.filter(i => String(i.codigo) !== String(codigoProduto));
+    localStorage.setItem('cartItems', JSON.stringify(carrinho));
+
+    // 🚀 Redireciona SEM mexer no DOM
+    window.location.href = whatsappURL;
+});
+
+// comprar todos os produtos do carrinho:
+
+document.addEventListener('click', function (event) {
+
+    const comprarTodosBtn = event.target.closest('.comprarAllItemBtn');
+    if (!comprarTodosBtn) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+
+    let carrinho = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    if (carrinho.length === 0) {
+        alert('Seu carrinho está vazio.');
+        return;
+    }
+
+    // 📝 Monta mensagem com TODOS os produtos
+    let mensagem =
+`Olá, tudo bem? Efetuei meu pedido pelo site:
+
+Segue informações:\n\n`;
+
+    carrinho.forEach((item, index) => {
+        mensagem +=
+`*Produto:* ${item.nome}
+*Código:* ${item.codigo}
+*Quantidade:* ${item.quantidade}`;
+
+        // 2 linhas entre produtos (menos no último)
+        if (index < carrinho.length - 1) {
+            mensagem += `\n\n`;
+        }
+    });
+
+    const whatsappURL =
+        `https://wa.me/5514998140452?text=${encodeURIComponent(mensagem)}`;
+
+    // 🗑️ Limpa o carrinho ANTES do redirect
+    localStorage.removeItem('cartItems');
+
+    // 🚀 Redireciona direto
+    window.location.href = whatsappURL;
+});
+
+
+   
+ 
+</script>
+</body>
+</html>

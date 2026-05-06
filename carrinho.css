@@ -1,0 +1,90 @@
+.main {
+  height: 80vh;
+  padding: 20px 0;
+}
+
+.titleCarrinho {
+  margin: 20px 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Container com scroll */
+.containerProdutos {
+  width: 90%;
+  max-width: 1200px;
+  height: 50vh;
+  margin: 0 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card do pedido */
+.pedido {
+  background-color: rgb(235, 239, 243);
+  font-family: "Poppins", sans-serif;
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 16px;
+  color: #2e2c2c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Imagem */
+.imgPedido img {
+  width: 80px;
+}
+
+/* Infos */
+.infoPedido {
+  flex: 1;
+  text-align: left;
+}
+
+/* Ações */
+.acoesPedido {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Botões */
+.removerBtn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.comprarItemBtn, .comprarAllItemBtn {
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 🔥 RESPONSIVO */
+@media (max-width: 768px) {
+  .pedido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .infoPedido {
+    text-align: center;
+  }
+
+  .acoesPedido {
+    flex-direction: row;
+    justify-content: center;
+  }
+}

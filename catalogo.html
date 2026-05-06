@@ -1,0 +1,3180 @@
+<!--    
+
+    /$$ /$$    /$$                /$$$$$$             /$$$$$$   /$$                                                       /$$ /$$   
+   /$$/| $$   | $$               /$$__  $$           /$$__  $$ | $$                                                      /$$/|  $$  
+  /$$/ | $$   | $$ /$$$$$$/$$$$ | $$  \__/  /$$$$$$ | $$  \__//$$$$$$   /$$  /$$  /$$  /$$$$$$   /$$$$$$   /$$$$$$      /$$/  \  $$ 
+ /$$/  |  $$ / $$/| $$_  $$_  $$|  $$$$$$  /$$__  $$| $$$$   |_  $$_/  | $$ | $$ | $$ |____  $$ /$$__  $$ /$$__  $$    /$$/    \  $$
+|  $$   \  $$ $$/ | $$ \ $$ \ $$ \____  $$| $$  \ $$| $$_/     | $$    | $$ | $$ | $$  /$$$$$$$| $$  \__/| $$$$$$$$   /$$/      /$$/
+ \  $$   \  $$$/  | $$ | $$ | $$ /$$  \ $$| $$  | $$| $$       | $$ /$$| $$ | $$ | $$ /$$__  $$| $$      | $$_____/  /$$/      /$$/ 
+  \  $$   \  $/   | $$ | $$ | $$|  $$$$$$/|  $$$$$$/| $$       |  $$$$/|  $$$$$/$$$$/|  $$$$$$$| $$      |  $$$$$$$ /$$/      /$$/  
+   \__/    \_/    |__/ |__/ |__/ \______/  \______/ |__/        \___/   \_____/\___/  \_______/|__/       \_______/|__/      |__/   
+                                                                                                                                    
+                                                                                                                                    
+     Nos siga em nossa rede social:  https://www.instagram.com/vm_software/                                                                                                                               
+                                                                                                                                   
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Mababy</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const ref = params.get('ref');
+        console.log(ref); // joao
+        localStorage.setItem('refVendedor', ref);
+    </script>
+    <!-- Tailwind + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ESTILOS GLOBAIS MEMORIZADOS -->
+    <style>
+        #divIconWhats {
+            cursor: pointer;
+            width: 50px;
+            position: fixed;
+            bottom: 5%;
+            right: 2%;
+            z-index: 6;
+        }
+        #iconWhtas{
+            cursor: pointer;
+            position: fixed;
+            bottom: 5%;
+            right: 2%;
+            width: 50px;           
+            z-index: 6;
+        }
+
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu { transition: all 0.3s ease; }
+
+        .carousel-item { transition: opacity 1s ease-in-out; }
+        .carousel-item:not(.active) { opacity: 0; display: none; }
+        .carousel-item.active { opacity: 1; display: block; }
+
+        .faq-item .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-item.active .answer { max-height: 500px; }
+
+        .counter { transition: all 1s ease; }
+
+        @media(max-width: 800px){
+            .IMGMVV { display: none; }
+            #Mobille {
+                display: flex;
+                flex-direction: row;
+                font-size: 10px;
+                justify-content: space-between;
+            }
+        }
+
+        #Historia { width: 90%; margin-left: 5%; }
+        .lstaLink {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+        .lstaLink a:hover { color: #0f5d75; font-weight: 700; }
+        .categoriaProduto {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 20px 0 10px 5%;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+
+<!-- ========================== HEADER ============================= -->
+<header class="sticky top-0 z-50 bg-white shadow-md">
+    <div style="background: linear-gradient(180deg, #048061, #048061);" class="text-white py-1 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+
+            <div class="flex items-center mb-2 md:mb-0">
+                <a href="index.html"><img src="assets/logoHeader.webp" alt="MABABY Logo" class="h-6"></a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a href="index.html#faq" class="text-sm hover:text-blue-200">Dúvidas Frequentes</a>
+                <a href="index.html#Contato" class="text-sm hover:text-blue-200">Contato</a>
+                <a href="index.html#Jobs" class="text-sm hover:text-blue-200">Trabalhe Conosco</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a target="_blank" href="https://www.instagram.com/mababydistribuidora/" class="text-white hover:text-blue-200">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="carrinho.html" class="cart-link text-white hover:text-blue-200">
+                  <i class="fas fa-shopping-cart"></i>
+                  <span class="cart-count">3</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+<!-- ====================== INÍCIO DO CATÁLOGO ======================== -->
+
+<section id="catalogo-simples" style="--gap:16px; --radius:16px; --brand:#0E4DFB; --text:#1E1E1E; --muted:#6B7280; --bg:#FFFFFF; --shadow:0 6px 24px rgba(0,0,0,.06);">
+
+<style>
+  .cart-link {
+  position: relative;
+  color: white;
+  font-size: 20px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -3px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+  #catalogo-simples { 
+    --gap: 16px; 
+    --radius: 16px; 
+    --brand: #0E4DFB; 
+    --text: #1E1E1E; 
+    --muted: #6B7280;
+    --bg: #FFFFFF;
+    --shadow: 0 6px 24px rgba(0,0,0,.06);
+    --min-card-w: 220px;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  /* SLIDER BLACK FRIDAY */
+  #black-friday-slider {
+    width: 100%;
+    overflow: hidden;
+    margin: 25px 0 40px 0;
+  }
+
+  #black-friday-slider .slider {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    animation: slide 22s linear infinite;
+  }
+
+  #black-friday-slider:hover .slider {
+    animation-play-state: paused;
+  }
+
+  #black-friday-slider .bf-card {
+    min-width: 260px;
+    border: 1px solid #eef0f4;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(0,0,0,.06);
+    background: #ffffff00;
+    overflow: hidden;
+  }
+
+  #black-friday-slider .bf-thumb {
+    padding: 12px;
+    aspect-ratio: 4/3;
+    display: flex;
+    justify-content: center;
+  }
+  #black-friday-slider .bf-thumb img {
+    width: 260px;
+    border-radius: 16px;
+  }
+
+  #black-friday-slider .bf-body {
+    padding: 14px;
+  }
+
+  #black-friday-slider .bf-name {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  #black-friday-slider .bf-desc {
+    font-size: 14px;
+    color: #6B7280;
+    margin-bottom: 12px;
+  }
+
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .title_voltar {
+    margin-left: 20px;
+  }
+</style>
+
+<div class="wrap">  
+    <a href="index.html" class="flex items-center gap-2 text-[#0f5d75] font-semibold hover:underline">
+      <i class="title_voltar fas fa-arrow-left"></i> Voltar
+    </a>
+    
+    <!-- =================== SLIDE BLACK FRIDAY ======================= -->
+    <h2 class="text-2xl font-bold mb-2 text-center">🔥 Ofertas Mababy</h2>
+    <p class="text-center text-gray-600 mb-3">Produtos selecionados com descontos exclusivos.</p>
+
+    <div id="black-friday-slider">
+      <div class="slider">
+
+        <!-- CARD BLACK FRIDAY 1 -->
+        <article class="bf-card">
+          <div class="bf-thumb"><img src="assets/catalogo/produtos/black/1.jpeg"></div>
+        </article>
+        <article class="bf-card">
+          <div class="bf-thumb"><img src="assets/catalogo/produtos/black/1.jpeg"></div>
+        </article>
+        <article class="bf-card">
+          <div class="bf-thumb"><img src="assets/catalogo/produtos/black/1.jpeg"></div>
+        </article>
+        <article class="bf-card">
+          <div class="bf-thumb"><img src="assets/catalogo/produtos/black/2.jpeg"></div>
+        </article>
+        <article class="bf-card">
+          <div class="bf-thumb"><img src="assets/catalogo/produtos/black/3.jpeg"></div>
+        </article>
+        <article class="bf-card">
+          <div class="bf-thumb"><img src="assets/catalogo/produtos/black/4.jpeg"></div>
+        </article>
+        <article class="bf-card">
+          <div class="bf-thumb"><img src="assets/catalogo/produtos/black/5.jpeg"></div>
+        </article>
+        <article class="bf-card">
+          <div class="bf-thumb"><img src="assets/catalogo/produtos/black/6.jpeg"></div>
+        </article>
+        <article class="bf-card">
+          <div class="bf-thumb"><img src="assets/catalogo/produtos/black/7.jpeg"></div>
+        </article>
+
+      </div>
+    </div>
+</div>
+    <!-- ====================== RESTO DO CATÁLOGO ======================= -->
+<style>
+/* Container centralizado */
+.carousel-container {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Área deslizante */
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Card do produto */
+.product-card {
+    min-width: calc(20% - 20px); /* 5 cards na tela */
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.product-card p {
+    font-size: 13px;
+    margin: 2px 0;
+}
+
+/* Input de quantidade */
+.quantity-input {
+    width: 60px;
+    padding: 5px;
+    margin: 8px 0;
+    text-align: center;
+}
+
+/* Botão adicionar */
+.add-btn {
+    background-color: #067A65;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.add-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Botões laterais */
+.carousel-btn {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 14px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.btn-left { left: 0; }
+.btn-right { right: 0; }
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .product-card {
+        min-width: calc(33.3% - 20px); /* 3 cards */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        min-width: calc(50% - 20px); /* 2 cards */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        min-width: 100%; /* 1 por vez */
+    }
+}
+</style>
+<!-- ====================== Mamadeiras ======================= -->
+<p class="categoriaProduto">Mamadeiras:</p>
+<div class="carousel-container">
+    <!-- Botões laterais -->
+    <button class="carousel-btn btn-left" onclick="moveCarousel(-1)">&#10094;</button>
+    <button class="carousel-btn btn-right" onclick="moveCarousel(1)">&#10095;</button>
+
+    <div class="carousel-track" id="carouselTrack">
+
+        <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3040-AZ.webp" alt="Produto">
+            <h3>Mamadeira Cristal</h3>
+            <p> Bico de PVC
+              60ml | EAN: 7898012494657
+            </p>
+            <p><b>Código:</b> 3040-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Cristal', '3040-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3040-RS.webp" alt="Produto">
+            <h3> Mamadeira Cristal</h3>
+            <p> 
+              Bico de PVC
+              60ml | EAN: 7898012494664
+            </p>
+            <p><b>Código:</b> 3040-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Cristal', '3040-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3040-VD.webp" alt="Produto">
+            <h3>Mamadeira Cristal</h3>
+            <p>  
+              Bico de PVC
+              60ml 
+            </p>
+            <p><b>Código:</b>3040-VD</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Cristal', '3040-VD', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3316-RS.webp" alt="Produto">
+            <h3>Mamadeira Cristal</h3>
+            <p> 
+              Bico de Silicone
+              60ml |EAN: 7898012497795
+            </p>
+            <p><b>Código:</b>3008-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Cristal', '3008-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3008-RS.webp" alt="Produto">
+            <h3>Mamadeira Cristal</h3>
+            <p> 
+              Bico de Silicone
+              60ml | EAN: 7898012497801
+            </p>
+            <p><b>Código:</b>3008-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Cristal', '3008-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3041-AZ.webp" alt="Produto">
+            <h3>Mamadeira Color</h3>
+            <p>
+              Bico de PVC
+              60ml | EAN: 7898012494695
+            </p>
+            <p><b>Código:</b>3041-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Color', '3041-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3041-RS.webp" alt="Produto">
+            <h3>Mamadeira Color</h3>
+            <p>               
+              Bico de PVC
+              60ml | EAN: 7898012494701
+            </p>
+            <p><b>Código:</b>3041-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Color', '3041-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3009-AZ.webp" alt="Produto">
+            <h3> Mamadeira Color</h3>
+            <p>
+              
+              Bico de Silicone
+              60ml | EAN: 7898012494619
+            </p>
+            <p><b>Código:</b>3009-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Color', '3009-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3009-RS.webp" alt="Produto">
+            <h3>Mamadeira Color</h3>
+            <p> 
+              Bico de Silicone
+              60ml | EAN: 7898012494626
+            </p>
+            <p><b>Código:</b>3009-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Color', '3009-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>  
+        
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3043-AZ.webp" alt="Produto">
+            <h3>Mini Anplas Cristal</h3>
+            <p> 
+              Bico de PVC
+              60ml | EAN: 7898012493247
+            </p>
+            <p><b>Código:</b>3043-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mini Anplas Cristal', '3043-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3043-RS.webp" alt="Produto">
+            <h3>Mini Anplas Cristal</h3>
+            <p> 
+              
+              Bico de PVC
+              60ml | EAN: 7898012493650
+            </p>
+            <p><b>Código:</b>3043-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mini Anplas Cristal', '3043-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3043-VD.webp" alt="Produto">
+            <h3>Mini Anplas Cristal</h3>
+            <p> 
+              
+              Bico de PVC
+              60ml | EAN: 7898719290453
+            </p>
+            <p><b>Código:</b>3043-VD</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mini Anplas Cristal', '3043-VD', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3042-AZ.webp" alt="Produto">
+            <h3>Mini Anplas Color</h3>
+            <p> 
+              Bico de PVC
+              60ml | EAN: 7898012493636
+            </p>
+            <p><b>Código:</b>3042-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mini Anplas Color', '3042-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3042-RS.webp" alt="Produto">
+            <h3>Mini Anplas Color</h3>
+            <p> 
+              Bico de PVC
+              60ml | EAN: 7898012493643
+            </p>
+            <p><b>Código:</b>3042-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mini Anplas Color', '3042-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3007-AZ.webp" alt="Produto">
+            <h3>M. Cristal Reta</h3>
+            <p> 
+              Bico de PVC
+              140ml | EAN: 7898012498969
+            </p>
+            <p><b>Código:</b>3007-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('M. Cristal Reta', '3007-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3007-RS.webp" alt="Produto">
+            <h3>M. Cristal Reta</h3>
+            <p> 
+              
+              Bico de PVC
+              140ml | EAN: 7898012498976
+            </p>
+            <p><b>Código:</b>3007-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('M. Cristal Reta', '3007-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3002-AZ.webp" alt="Produto">
+            <h3>M. Cristal Reta</h3>
+            <p> 
+              Bico de Silicone
+              140ml | EAN: 7898012497757
+            </p>
+            <p><b>Código:</b>3002-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('M. Cristal Reta', '3002-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3002-RS.webp" alt="Produto">
+            <h3>M. Cristal Reta</h3>
+            <p> 
+              Bico de Silicone
+              140ml | EAN: 7898012497764
+            </p>
+            <p><b>Código:</b>3002-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('M. Cristal Reta', '3002-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">  
+            <img src="assets/catalogo/produtos/mamadeiras/3306-AZ.webp" alt="Produto">
+            <h3>M. Cristal Cinturada</h3>
+            <p> 
+              Bico de Silicone
+              140ml | EAN: 7898012498853
+            </p>
+            <p><b>Código:</b>3306-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('M. Cristal Cinturada', '3306-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">  
+            <img src="assets/catalogo/produtos/mamadeiras/3305-RS.webp" alt="Produto">
+            <h3>M. Cristal Cinturada</h3>
+            <p> 
+              Bico de Silicone
+              140ml | EAN: 7898012497924
+            </p>
+            <p><b>Código:</b>3305-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('M. Cristal Cinturada', '3305-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">  
+            <img src="assets/catalogo/produtos/mamadeiras/3305-BR.webp" alt="Produto">
+            <h3>M. Cristal Cinturada</h3>
+            <p> 
+              
+              Bico de Silicone
+              140ml
+            </p>
+            <p><b>Código:</b>3305-BR</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('M. Cristal Cinturada', '3305-BR', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">  
+            <img src="assets/catalogo/produtos/mamadeiras/3305-VD.webp" alt="Produto">
+            <h3>M. Cristal Cinturada</h3>
+            <p> 
+              Bico de Silicone
+              140ml 
+            </p>
+            <p><b>Código:</b>3305-VD</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('M. Cristal Cinturada', '3305-VD', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">  
+            <img src="assets/catalogo/produtos/mamadeiras/3401-AZ.webp" alt="Produto">
+            <h3>M. Cristal Cinturada</h3>
+            <p> 
+              Bico de Silicone
+              140ml | EAN: 7898012495555
+            </p>
+            <p><b>Código:</b>3401-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('M. Cristal Cinturada', '3401-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">  
+            <img src="assets/catalogo/produtos/mamadeiras/3401-RS.webp" alt="Produto">
+            <h3>M. Cristal Cinturada</h3>
+            <p> 
+              Bico de Silicone
+              140ml | EAN: 7898012495579
+            </p>
+            <p><b>Código:</b>3401-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('M. Cristal Cinturada', '3401-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">  
+            <img src="assets/catalogo/produtos/mamadeiras/3029-RS.webp" alt="Produto">
+            <h3>Anplas Reta Cristal</h3>
+            <p> 
+              
+              Bico de PVC
+              140ml | EAN: 7898012495449
+            </p>
+            <p><b>Código:</b>3029-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Anplas Reta Cristal', '3029-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">  
+            <img src="assets/catalogo/produtos/mamadeiras/3029-BR.webp" alt="Produto">
+            <h3>Anplas Reta Cristal</h3>
+            <p> 
+              
+              Bico de PVC
+              140ml | EAN: 7898719291542
+            </p>
+            <p><b>Código:</b>3029-BR</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Anplas Reta Cristal', '3029-BR', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">  
+            <img src="assets/catalogo/produtos/mamadeiras/7131-RS.webp" alt="Produto">
+            <h3>Bico de Silicone</h3>
+            <p>  
+              240ml | EAN: 7898012498099
+            </p>
+            <p><b>Código:</b>7131-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Bico de Silicone', '7131-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">  
+            <img src="assets/catalogo/produtos/mamadeiras/7130-AZ.webp" alt="Produto">
+            <h3>Bico de Silicone</h3>
+            <p> 
+              
+              240ml | Ref.: 
+              EAN: 7898012498082
+            </p>
+            <p><b>Código:</b>7130-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Bico de Silicone', '7130-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">  
+            <img src="assets/catalogo/produtos/mamadeiras/3028-RS.webp" alt="Produto">
+            <h3>Anplas Reta Cristal</h3>
+            <p>              
+              Bico de PVC
+              240ml | EAN: 7898012495425
+            </p>
+            <p><b>Código:</b>3028-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Anplas Reta Cristal', '3028-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">  
+            <img src="assets/catalogo/produtos/mamadeiras/3028-AZ.webp" alt="Produto">
+            <h3>Anplas Reta Cristal</h3>
+            <p> 
+              Bico de PVC
+              240ml | EAN: 7898012495418
+            </p>
+            <p><b>Código:</b>3028-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Anplas Reta Cristal', '3028-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+    </div>
+</div>
+<script>
+// Lógica simples do carrossel
+let currentIndex = 0;
+
+function moveCarousel(direction) {
+    const track = document.getElementById("carouselTrack");
+    const cardWidth = track.children[0].offsetWidth + 20; // largura + gap
+    const maxIndex = track.children.length - 1;
+
+    currentIndex += direction;
+
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+    track.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
+}
+</script>
+
+<!-- ====================== Mamadeiras com alça ======================= -->
+<p class="categoriaProduto">Mamadeiras com alça:</p>
+<div class="carousel-container">
+    <!-- Botões laterais -->
+    <button class="carousel-btn btn-left" onclick="moveCarouselalca(-1)">&#10094;</button>
+    <button class="carousel-btn btn-right" onclick="moveCarouselalca(1)">&#10095;</button>
+
+    <div class="carousel-track" id="carouselTrackalca">
+
+        <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3316-RS.webp" alt="Produto">
+            <h3>Mamadeira Color</h3>
+            <p> 
+              
+              Bico de PVC
+              240ml | EAN: 7898012495111
+            </p>
+            <p><b>Código:</b> 3316-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Color', '3316-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div> 
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3316-AZ.webp" alt="Produto">
+            <h3>Mamadeira Color</h3>
+            <p> 
+              
+              Bico de PVC
+              240ml | Ref.: 
+              EAN: 7898012495098
+            </p>
+            <p><b>Código:</b> 3316-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Color', '3316-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3315-RS.webp" alt="Produto">
+            <h3>Mamadeira Color</h3>
+            <p> 
+              Bico de Silicone
+              240ml | EAN: 7898012494541
+            </p>
+            <p><b>Código:</b> 3315-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Color', '3315-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3315-AZ.webp" alt="Produto">
+            <h3>Mamadeira Color</h3>
+            <p> 
+              
+              Bico Silicone
+              240ml | Ref.: 
+              EAN: 7898012494534
+            </p>
+            <p><b>Código:</b> 3315-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Color', '3315-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3308-RS.webp" alt="Produto">
+            <h3>Mamadeira Cristal</h3>
+            <p> 
+              
+              Bico de PVC
+              240ml | EAN: 7898012499058
+            </p>
+            <p><b>Código:</b> 3308-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Cristal', '3308-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3308-AZ.webp" alt="Produto">
+            <h3>Mamadeira Cristal</h3>
+            <p> 
+              
+              Bico de PVC
+              240ml | EAN: 789801249041
+            </p>
+            <p><b>Código:</b> 3308-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Cristal', '3308-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3308-VD.webp" alt="Produto">
+            <h3>Mamadeira Cristal</h3>
+            <p> 
+              
+              Bico de PVC
+              240ml 
+            </p>
+            <p><b>Código:</b> 3308-VD</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Cristal', '3308-VD', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3308-VD.webp" alt="Produto">
+            <h3>Mamadeira Cristal</h3>
+            <p> 
+              
+              Bico de PVC
+              240ml 
+            </p>
+            <p><b>Código:</b> 3308-VD</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Cristal', '3308-VD', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3412-RS.webp" alt="Produto">
+            <h3>Mamadeira Color</h3>
+            <p> 
+              
+              Bico Silicone Orto
+              240ml | EAN: 7898012495616
+            </p>
+            <p><b>Código:</b> 3412-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Color', '3412-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3307-RS.webp" alt="Produto">
+            <h3>MamadeiraCristal</h3>
+            <p> 
+              BicodeSilicone
+              240ml|EAN:7898012499010
+            </p>
+            <p><b>Código:</b> 3307-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('MamadeiraCristal', '3307-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3307-AZ.webp" alt="Produto">
+            <h3>MamadeiraCristal</h3>
+            <p> 
+              
+              BicodeSilicone
+              240ml| EAN: 7898012499003
+            </p>
+            <p><b>Código:</b> 3307-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('MamadeiraCristal', '3307-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3412-AZ.webp" alt="Produto">
+            <h3>Mamadeira Color</h3>
+            <p> 
+              
+              Bico Silicone Orto
+              240ml | EAN: 78980124955930
+            </p>
+            <p><b>Código:</b> 3412-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Mamadeira Color', '3412-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+        
+        
+    </div>
+</div>
+<script>
+// Lógica simples do carrossel
+let mamadeiraalca = 0;
+
+function moveCarouselalca(direction) {
+    const track = document.getElementById("carouselTrackalca");
+    const cardWidth = track.children[0].offsetWidth + 20; // largura + gap
+    const maxIndex = track.children.length - 1;
+
+    mamadeiraalca += direction;
+
+    if (mamadeiraalca < 0) mamadeiraalca = 0;
+    if (mamadeiraalca > maxIndex) mamadeiraalca = maxIndex;
+
+    track.style.transform = `translateX(${-mamadeiraalca * cardWidth}px)`;
+}
+</script>
+
+
+<!-- ====================== Kits Mamadeiras ======================= -->
+<p class="categoriaProduto">Kits Mamadeiras:</p>
+<div class="carousel-container">
+    <!-- Botões laterais -->
+    <button class="carousel-btn btn-left" onclick="moveCarouselkit(-1)">&#10094;</button>
+    <button class="carousel-btn btn-right" onclick="moveCarouselkit(1)">&#10095;</button>
+
+    <div class="carousel-track" id="carouselTrackkit">
+
+        <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3432-AZ.webp" alt="Produto">
+            <h3>Super Color</h3>
+            <p>             
+              Bico de Silicone
+              3 Itens| EAN: 7898012490569
+            </p>
+            <p><b>Código:</b> 3432-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Super Color', '3432-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+        
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3432-RS.webp" alt="Produto">
+            <h3>Super Color</h3>
+            <p> 
+              
+              Bico de Silicone
+              3 Itens | EAN: 7898012490583
+            </p>
+            <p><b>Código:</b> 3432-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Super Color', '3432-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3433-AZ.webp" alt="Produto">
+            <h3>Super Cristal</h3>
+            <p> 
+              
+              Bico de Silicone
+              3 Itens | EAN: 7898012490965
+            </p>
+            <p><b>Código:</b> 3433-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Super Cristal', '3433-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3433-RS.webp" alt="Produto">
+            <h3>Super Cristal</h3>
+            <p> 
+              
+              Bico de Silicone
+              3 Itens | EAN: 7898012490972
+            </p>
+            <p><b>Código:</b> 3433-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Super Cristal', '3433-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/6710-AZ.webp" alt="Produto">
+            <h3>Super Duke</h3>
+            <p> 
+              
+              Bico Silicone Redondo
+              3 Itens | EAN: 7898012493964
+            </p>
+            <p><b>Código:</b> 6710-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Super Duke', '6710-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/6720-RS.webp" alt="Produto">
+            <h3>Super Cristal</h3>
+            <p> 
+              
+              Bico Silicone Redondo
+              3 Itens | EAN: 7898012493957
+            </p>
+            <p><b>Código:</b> 6720-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Super Cristal', '6720-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3421-AZ.webp" alt="Produto">
+            <h3>Reta Cristal</h3>
+            <p> 
+              
+              
+              Bico de PVC
+              3 Itens | EAN: 7898012494930
+            </p>
+            <p><b>Código:</b> 3421-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Reta Cristal', '3421-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3421-RS.webp" alt="Produto">
+            <h3>Reta Cristal</h3>
+            <p> 
+              
+              Bico de PVC
+              3 Itens| EAN: 7898012494947
+            </p>
+            <p><b>Código:</b> 3421-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Reta Cristal', '3421-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3417-AZ.webp" alt="Produto">
+            <h3>Reta Cristal</h3>
+            <p> 
+              Bico de Silicone
+              3 Itens | EAN: 7898012497832
+            </p>
+            <p><b>Código:</b> 3417-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Reta Cristal', '3417-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3423-AZ.webp" alt="Produto">
+            <h3>Reta Color</h3>
+            <p> 
+              
+              Bico de PVC
+              3 Itens | EAN: 7898012495012
+            </p>
+            <p><b>Código:</b> 3423-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Reta Color', '3423-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3423-RS.webp" alt="Produto">
+            <h3>Reta Color</h3>
+            <p> 
+              
+              Bico de PVC
+              3 Itens| EAN: 7898012495029
+            </p>
+            <p><b>Código:</b> 3423-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Reta Color', '3423-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3419-AZ.webp" alt="Produto">
+            <h3>Reta Color</h3>
+            <p> 
+              
+              Bico de Silicone
+              3 Itens | EAN: 7898012494855
+            </p>
+            <p><b>Código:</b> 3419-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Reta Color', '3419-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3420-AZ.webp" alt="Produto">
+            <h3>Cinturada Cristal</h3>
+            <p> 
+              
+              Bico de PVC
+              3 Itens | EAN: 7898012494893
+            </p>
+            <p><b>Código:</b> 3420-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Cinturada Cristal', '3420-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3420-RS.webp" alt="Produto">
+            <h3>Cinturada Cristal</h3>
+            <p> 
+              Bico de PVC
+              3 Itens| EAN: 7898012494909
+            </p>
+            <p><b>Código:</b> 3420-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Cinturada Cristal', '3420-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3420-BR.webp" alt="Produto">
+            <h3>Cinturada Cristal</h3>
+            <p> 
+              Bico de Silicone
+              3 Itens | Ref.: 
+              EAN: 7898719291528
+            </p>
+            <p><b>Código:</b> 3420-BR</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Cinturada Cristal', '3420-BR', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3515-AZ.webp" alt="Produto">
+            <h3>Anplas Reta Color</h3>
+            <p> 
+              
+              Bico de PVC
+              3 Itens | EAN: 7898719290521
+            </p>
+            <p><b>Código:</b> 3515-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Anplas Reta Color', '3515-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3515-RS.webp" alt="Produto">
+            <h3>Anplas Reta Color</h3>
+            <p> 
+              
+              Bico de PVC
+              3 Itens | EAN: 7898719290545
+            </p>
+            <p><b>Código:</b> 3515-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Anplas Reta Color', '3515-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3510-AZ.webp" alt="Produto">
+            <h3>Anplas Reta Cristal</h3>
+            <p> 
+              
+              Bico de PVC
+              3 Itens | EAN: 7898719290484
+            </p>
+            <p><b>Código:</b> 3510-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Anplas Reta Cristal', '3510-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3510-RS.webp" alt="Produto">
+            <h3>Anplas Reta Cristal</h3>
+            <p> 
+              
+              Bico de PVC
+              3 Itens | EAN: 7898719290507
+            </p>
+            <p><b>Código:</b> 3510-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Anplas Reta Cristal', '3510-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        
+
+    </div>
+</div>
+<script>
+// Lógica simples do carrossel
+let mamadeirakit = 0;
+
+function moveCarouselkit(direction) {
+    const track = document.getElementById("carouselTrackkit");
+    const cardWidth = track.children[0].offsetWidth + 20; // largura + gap
+    const maxIndex = track.children.length - 1;
+
+    mamadeirakit += direction;
+
+    if (mamadeirakit < 0) mamadeirakit = 0;
+    if (mamadeirakit > maxIndex) mamadeirakit = maxIndex;
+
+    track.style.transform = `translateX(${-mamadeirakit * cardWidth}px)`;
+}
+
+</script>
+
+
+<!-- ====================== Copos Treinamento ======================= -->
+<p class="categoriaProduto">Copos Treinamento:</p>
+<div class="carousel-container">
+    <!-- Botões laterais -->
+    <button class="carousel-btn btn-left" onclick="moveCarousecopo(-1)">&#10094;</button>
+    <button class="carousel-btn btn-right" onclick="moveCarousecopo(1)">&#10095;</button>
+
+    <div class="carousel-track" id="carouselTrackcopo">
+
+        <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7010.webp" alt="Produto">
+            <h3>C. Treinamento Duke c/ Válv. Controle de Fluxo</h3>
+            <p>             
+              
+              270ml | EAN: 7898012499805
+            </p>
+            <p><b>Código:</b> 7010</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('C. Treinamento Duke c/ Válv. Controle de Fluxo', '7010', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7020.webp" alt="Produto">
+            <h3>C. Treinamento Chérie c/ Válv. Controle de Fluxo</h3>
+            <p>             
+              
+              270ml |  
+              EAN: 7898012499812
+            </p>
+            <p><b>Código:</b> 7020</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('C. Treinamento Chérie c/ Válv. Controle de Fluxo', '7020', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7030.webp" alt="Produto">
+            <h3>C. Treinamento Mar c/ Válv. Controle de Fluxo</h3>
+            <p>             
+              
+              270ml | 
+              EAN: 7898012499829
+            </p>
+            <p><b>Código:</b> 7030</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('C. Treinamento Mar c/ Válv. Controle de Fluxo', '7030', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7040.webp" alt="Produto">
+            <h3>C. Treinamento Filhotes c/Válv. Controle de Fluxo</h3>
+            <p>             
+              
+              270ml | Ref.: 
+              EAN: 7898012499850
+            </p>
+            <p><b>Código:</b> 7040</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('C. Treinamento Filhotes c/Válv. Controle de Fluxo', '7040', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7041.webp" alt="Produto">
+            <h3>C. Treinamento Filhotes c/Válv. Controle de Fluxo</h3>
+            <p>             
+              
+              270ml | EAN: 7898012499867
+            </p>
+            <p><b>Código:</b> 7041</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('C. Treinamento Filhotes c/Válv. Controle de Fluxo', '7041', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7050.webp" alt="Produto">
+            <h3>C. Treinamento Petit c/ válv. Controle de Fluxo</h3>
+            <p>             
+              270ml | 
+              EAN: 7898012496743
+            </p>
+            <p><b>Código:</b> 7050</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('C. Treinamento Petit c/ válv. Controle de Fluxo', '7050', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7051.webp" alt="Produto">
+            <h3>C. Treinamento Filhotes c/Válv. Controle de Fluxo</h3>
+            <p>             
+              
+              270ml |  
+              EAN: 7898012496620
+            </p>
+            <p><b>Código:</b> 7051</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('C. Treinamento Filhotes c/Válv. Controle de Fluxo', '7051', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7031.webp" alt="Produto">
+            <h3>C. Treinamento Mar c/Válv. Controle de Fluxo</h3>
+            <p>             
+              
+              270ml | EAN: 7898012499843
+            </p>
+            <p><b>Código:</b> 7031</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('C. Treinamento Mar c/Válv. Controle de Fluxo', '7031', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/6100-AZ.webp" alt="Produto">
+            <h3>Copo Treinamento c/Válv. Controle de Fluxo</h3>
+            <p>             
+              
+              
+              270ml | Ref.: 
+              EAN: 7898012499782
+            </p>
+            <p><b>Código:</b> 7041</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Copo Treinamento c/Válv. Controle de Fluxo', '7041', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/6100-RS.webp" alt="Produto">
+            <h3>Copo Treinamento c/Válv. Controle de Fluxo</h3>
+            <p>             
+              
+              270ml | 
+              EAN: 7898012499799
+            </p>
+            <p><b>Código:</b> 6100-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Copo Treinamento c/Válv. Controle de Fluxo', '6100-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/4503-AZ.webp" alt="Produto">
+            <h3>Copo Treinamento Anplas</h3>
+            <p>             
+              
+              Color Bico Rígido
+              270ml | 
+              EAN: 7898012491274
+            </p>
+            <p><b>Código:</b> 4503-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Copo Treinamento Anplas', '4503-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/4503-RS.webp" alt="Produto">
+            <h3>Copo Treinamento Anplas</h3>
+            <p>   
+              Color Bico Rígido
+              270ml |  
+              EAN: 7898012491229
+            </p>
+            <p><b>Código:</b> 4503-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Copo Treinamento Anplas', '4503-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/6105-AZ.webp" alt="Produto">
+            <h3> Copo Decorado c/ Alça</h3>
+            <p>   
+              B. Silicone Antivazamento
+              270ml | 
+              EAN: 789871929192
+            </p>
+            <p><b>Código:</b> 6105-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Copo Decorado c/ Alça', '6105-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/6105-RS.webp" alt="Produto">
+            <h3> Copo Decorado c/ Alça</h3>
+            <p>   
+              B. Silicone Antivazamento
+              270ml | 
+              EAN: 789871929192
+            </p>
+            <p><b>Código:</b> 6105-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Copo Decorado c/ Alça', '6105-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        
+    </div>
+</div>
+<script>
+// Lógica simples do carrossel
+let kitcopo = 0;
+
+function moveCarousecopo(direction) {
+    const track = document.getElementById("carouselTrackcopo");
+    const cardWidth = track.children[0].offsetWidth + 20; // largura + gap
+    const maxIndex = track.children.length - 1;
+
+    kitcopo += direction;
+
+    if (kitcopo < 0) kitcopo = 0;
+    if (kitcopo > maxIndex) kitcopo = maxIndex;
+
+    track.style.transform = `translateX(${-kitcopo * cardWidth}px)`;
+}
+</script>
+
+<!-- ====================== Canecas com Alça ======================= -->
+<p class="categoriaProduto">Canecas com Alça:</p>
+<div class="carousel-container">
+    <!-- Botões laterais -->
+    <button class="carousel-btn btn-left" onclick="moveCarousecanecaalca(-1)">&#10094;</button>
+    <button class="carousel-btn btn-right" onclick="moveCarousecanecaalca(1)">&#10095;</button>
+
+    <div class="carousel-track" id="carouselTrackcanecaalca">
+        <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3050-RS.webp" alt="Produto">
+            <h3>Caneca com Alça</h3>
+            <p>             
+              
+              200ml | 
+              EAN: 7898012495241
+            </p>
+            <p><b>Código:</b> 3050-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Caneca com Alça', '3050-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3050-AZ.webp" alt="Produto">
+            <h3>Caneca com Alça</h3>
+            <p>             
+              
+              200ml |  
+              EAN: 7898012495241
+            </p>
+            <p><b>Código:</b> 3050-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Caneca com Alça', '3050-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3051-RS.webp" alt="Produto">
+            <h3>Caneca com Alça</h3>
+            <p>
+              200ml | 
+              EAN: 7898012495241
+            </p>
+            <p><b>Código:</b> 3051-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Caneca com Alça', '3051-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3051-AZ.webp" alt="Produto">
+            <h3>Caneca com Alça</h3>
+            <p>             
+              
+              200ml | Ref.: 3051-AZ
+              EAN: 7898012495241
+            </p>
+            <p><b>Código:</b> 3051-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Caneca com Alça', '3051-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7631-RS.webp" alt="Produto">
+            <h3>Caneca com Alça L. Fundo do Mar</h3>
+            <p>             
+              200ml | Ref.: 7631-RS
+              EAN: 7898012498396
+            </p>
+            <p><b>Código:</b> 7631-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Caneca com Alça L. Fundo do Mar', '7631-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7630-AZ.webp" alt="Produto">
+            <h3>Caneca com Alça L. Fundo do Mar</h3>
+            <p>             
+              200ml 
+              EAN: 7898012498389
+            </p>
+            <p><b>Código:</b> 7630-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Caneca com Alça L. Fundo do Mar', '7630-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7651-RS.webp" alt="Produto">
+            <h3>Caneca com Alça Linha Urso</h3>
+            <p>             
+              
+              200ml | Ref.: 
+              EAN: 7898012490727
+            </p>
+            <p><b>Código:</b> 7651-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Caneca com Alça Linha Urso', '7651-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7650-AZ.webp" alt="Produto">
+            <h3>Caneca com Alça Linha Urso</h3>
+            <p>
+              200ml 
+              EAN: 7898012490734
+            </p>
+            <p><b>Código:</b> 7650-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Caneca com Alça Linha Urso', '7650-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+    </div>
+</div>
+<script>
+// Lógica simples do carrossel
+let canecaalca = 0;
+function moveCarousecanecaalca(direction) {
+    const track = document.getElementById("carouselTrackcanecaalca");
+    const cardWidth = track.children[0].offsetWidth + 20; // largura + gap
+    const maxIndex = track.children.length - 1;
+
+    canecaalca += direction;
+
+    if (canecaalca < 0) canecaalca = 0;
+    if (canecaalca > maxIndex) canecaalca = maxIndex;
+
+    track.style.transform = `translateX(${-canecaalca * cardWidth}px)`;
+}
+</script>
+
+
+
+
+
+
+<!-- ====================== Kits Refeição Petita ======================= -->
+<p class="categoriaProduto">Kits Refeição Petita:</p>
+<div class="carousel-container">
+    <!-- Botões laterais -->
+    <button class="carousel-btn btn-left" onclick="moveCarouserefpetita(-1)">&#10094;</button>
+    <button class="carousel-btn btn-right" onclick="moveCarouserefpetita(1)">&#10095;</button>
+
+    <div class="carousel-track" id="carouselTrackrefpetita">
+        <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7720.webp" alt="Produto">
+            <h3>Kit Refeição Chérie</h3>
+            <p>
+              
+              Caneca com alça 200ml
+               | Blis. 4 itens
+              EAN: 7898012498433
+            </p>
+            <p><b>Código:</b> 7720</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Kit Refeição Chérie', '7720', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7710.webp" alt="Produto">
+            <h3>Kit Refeição Duke</h3>
+            <p>
+              
+              Caneca com alça 200ml
+              | Blis. 4 itens
+              EAN: 7898012498426
+            </p>
+            <p><b>Código:</b> 7710</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Kit Refeição Duke', '7710', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7741.webp" alt="Produto">
+            <h3>Kit Refeição Filhotes</h3>
+            <p>
+              
+              Caneca com alça 200ml
+              | Blis. 4 itens
+              EAN: 7898012498471
+            </p>
+            <p><b>Código:</b> 7741</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Kit Refeição Filhotes', '7741', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7740.webp" alt="Produto">
+            <h3> Kit Refeição Filhotes</h3>
+            <p>
+              Caneca com alça 200ml
+              Ref.:  | Blis. 4 itens
+              EAN: 7898012498426
+            </p>
+            <p><b>Código:</b> 7740</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Kit Refeição Filhotes', '7740', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7751-RS.webp" alt="Produto">
+            <h3>Chup. Petit Fundo do Mar</h3>
+            <p>
+              
+              Caneca com alça 200ml
+             | Blis. 4 itens
+              EAN: 7898012496446
+            </p>
+            <p><b>Código:</b> 7751-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Kit Refeição Urso', '7751-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7750-AZ.webp" alt="Produto">
+            <h3> Kit Refeição Urso</h3>
+            <p>
+              Caneca com alça 200ml
+              | Blis. 4 itens
+              EAN: 7898012496446
+            </p>
+            <p><b>Código:</b> 7750-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Kit Refeição Urso', '7750-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3073-RS.webp" alt="Produto">
+            <h3> Kit Refeição</h3>
+            <p>
+              Caneca com alça 200ml
+               Blis. 4 itens
+              EAN: 7898012499690
+            </p>
+            <p><b>Código:</b> 3073-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Kit Refeição', '3073-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/3073-AZ.webp" alt="Produto">
+            <h3> Kit Refeição</h3>
+            <p>
+              Caneca com alça 200ml
+              Ref.:  | Blis. 4 itens
+              EAN: 7898012498693
+            </p>
+            <p><b>Código:</b> 3073-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Kit Refeição', '3073-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/6920.webp" alt="Produto">
+            <h3> Kit Refeição Chérie</h3>
+            <p>
+              
+              Copo Treinamento 270ml
+              Ref.: | Blis. 4 itens
+              EAN: 7898012496323
+            </p>
+            <p><b>Código:</b> 6920</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Kit Refeição Chérie', '6920', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/6910.webp" alt="Produto">
+            <h3> Kit Refeição Duke</h3>
+            <p>
+              
+              Copo Treinamento 270ml
+             | Blis. 4 itens
+              EAN: 7898012496446
+            </p>
+            <p><b>Código:</b> 6910</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Kit Refeição Duke', '6910', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/6951.webp" alt="Produto">
+            <h3> Kit Refeição Petit</h3>
+            <p>
+              
+              Copo Treinamento 270ml
+              | Blis. 4 itens
+              EAN: 7898012496507
+            </p>
+            <p><b>Código:</b> 6951</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Kit Refeição Petit', '6951', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/6950.webp" alt="Produto">
+            <h3>Kit Refeição Petit</h3>
+            <p>
+              Copo Treinamento 270ml
+              Ref.:  | Blis. 4 itens
+              EAN: 7898012496569
+            </p>
+            <p><b>Código:</b> 6950</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Kit Refeição Petit', '6950', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1840-NT.webp" alt="Produto">
+            <h3>Chupeta Premium</h3>
+            <p>
+              100% Silicone Orto
+              T-2 |  
+              EAN: 7898012491281
+            </p>
+            <p><b>Código:</b> 1840-NT</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Chupeta Premium', '1840-NT', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7731-RS.webp" alt="Produto">
+            <h3>Kit Refeição Fundo do Mar</h3>
+            <p>
+              
+              Caneca com alça 200ml
+              | Blis. 4 itens
+              EAN: 7898012498457
+            </p>
+            <p><b>Código:</b> 7731-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Kit Refeição Petit', '7731-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+    </div>
+</div>
+<script>
+// Lógica simples do carrossel
+let refpetita = 0;
+function moveCarouserefpetita(direction) {
+    const track = document.getElementById("carouselTrackrefpetita");
+    const cardWidth = track.children[0].offsetWidth + 20; // largura + gap
+    const maxIndex = track.children.length - 1;
+
+    refpetita += direction;
+
+    if (refpetita < 0) refpetita = 0;
+    if (refpetita > maxIndex) refpetita = maxIndex;
+
+    track.style.transform = `translateX(${-refpetita * cardWidth}px)`;
+}
+</script>
+
+
+<!-- ====================== Chupetas Petita ======================= -->
+<p class="categoriaProduto">Chupetas Petita:</p>
+<div class="carousel-container">
+    <!-- Botões laterais -->
+    <button class="carousel-btn btn-left" onclick="movechupeta(-1)">&#10094;</button>
+    <button class="carousel-btn btn-right" onclick="movechupeta(1)">&#10095;</button>
+
+    <div class="carousel-track" id="carouselTrackrchupeta">
+        <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1760-AZ.webp" alt="Produto">
+            <h3>Chup. Cristal Ventilada</h3>
+            <p>
+              
+              Bico Silicone
+              T-1 (RN) | 
+              EAN: 7898012496774
+            </p>
+            <p><b>Código:</b> 1760-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Chup. Cristal Ventilada', '1760-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1760-RS.webp" alt="Produto">
+            <h3>Chup. Cristal Ventilada</h3>
+            <p>
+              
+              Bico Silicone
+              T-1 (RN) |  
+              EAN: 7898012496781
+            </p>
+            <p><b>Código:</b> 1760-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Chup. Cristal Ventilada', '1760-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1770-RS.webp" alt="Produto">
+            <h3>Chup. Cristal Ventilada</h3>
+            <p>
+              
+              Bico Silicone Orto
+              T-1 (RN) | 
+              EAN: 7898012496835
+            </p>
+            <p><b>Código:</b> 1770-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Chup. Cristal Ventilada', '1770-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1770-AZ.webp" alt="Produto">
+            <h3> Chup. Cristal Ventilada</h3>
+            <p>
+              
+              Bico Silicone Orto
+              T-1 (RN) |
+              EAN: 7898012496842
+            </p>
+            <p><b>Código:</b> 1770-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Chup. Cristal Ventilada', '1770-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7331-RS.webp" alt="Produto">
+            <h3>Chup. Petit Fundo do Mar</h3>
+            <p>
+              
+              Bico Silicone Orto
+              T-1 (RN) | Ref.: 7331-RS
+              EAN: 7898012498211
+            </p>
+            <p><b>Código:</b> 7331-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Chup. Petit Fundo do Mar', '7331-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7330-AZ.webp" alt="Produto">
+            <h3>Chup. Petit Fundo do Mar</h3>
+            <p>
+              Bico Silicone Orto
+              T-1 (RN) | Ref.: 
+              EAN: 78980124982046
+            </p>
+            <p><b>Código:</b> 7330-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Chup. Petit Fundo do Mar', '7330-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1810-RS.webp" alt="Produto">
+            <h3>Chupeta Cristal Petit</h3>
+            <p>
+              Bico Silicone
+              T-1 (RN) |  
+              EAN: 7898012498655
+            </p>
+            <p><b>Código:</b> 1810-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Chupeta Cristal Petit', '1810-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1810-AZ.webp" alt="Produto">
+            <h3>Chupeta Cristal Petit</h3>
+            <p>
+              Bico Silicone
+              T-1 (RN) | Ref.: 
+              EAN: 7898012498648
+            </p>
+            <p><b>Código:</b> 1810-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Chupeta Cristal Petit', '1810-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1830-RS.webp" alt="Produto">
+            <h3>Chupeta Cristal Petit</h3>
+            <p>
+              
+              Bico Silicone Orto
+              T-1 (RN) |
+              EAN: 7898012498730
+            </p>
+            <p><b>Código:</b> 1830-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Chupeta Cristal Petit', '1830-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1830-AZ.webp" alt="Produto">
+            <h3>Chupeta Cristal Petit</h3>
+            <p>
+              Bico Silicone Orto
+              T-1 (RN) | 
+              EAN: 7898012498655
+            </p>
+            <p><b>Código:</b> 1830-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Chupeta Cristal Petit', '1830-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1800-RS.webp" alt="Produto">
+            <h3>Chupeta Cristal Petit</h3>
+            <p>
+              
+              Bico Silicone
+              T-2 | 
+              EAN: 7898012498600
+            </p>
+            <p><b>Código:</b> 1800-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Chupeta Cristal Petit', '1800-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1800-AZ.webp" alt="Produto">
+            <h3>Chupeta Cristal Petit</h3>
+            <p>
+              
+              Bico Silicone
+              T-2 |
+              EAN: 7898012498617
+            </p>
+            <p><b>Código:</b> 1800-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Chupeta Cristal Petit', '1800-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1820-RS.webp" alt="Produto">
+            <h3>Chupeta Cristal Petit</h3>
+            <p>
+              
+              Bico Silicone Orto
+              T-2 | Ref.: 
+              EAN: 7898012498686
+            </p>
+            <p><b>Código:</b> 1820-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Chupeta Cristal Petit', '1820-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1840-NT.webp" alt="Produto">
+            <h3>Chupeta Premium</h3>
+            <p>
+              
+              100% Silicone Orto
+              T-2 | 
+              EAN: 7898012491281
+            </p>
+            <p><b>Código:</b> 1840-NT</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Kit Refeição Petit', '1840-NT', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+    </div>
+</div>
+<script>
+// Lógica simples do carrossel
+let chupeta = 0;
+function movechupeta(direction) {
+    const track = document.getElementById("carouselTrackrchupeta");
+    const cardWidth = track.children[0].offsetWidth + 20; // largura + gap
+    const maxIndex = track.children.length - 1;
+
+    chupeta += direction;
+
+    if (chupeta < 0) chupeta = 0;
+    if (chupeta > maxIndex) chupeta = maxIndex;
+
+    track.style.transform = `translateX(${-chupeta * cardWidth}px)`;
+}
+</script>
+
+
+
+<!-- ====================== Kits Banho ======================= -->
+<p class="categoriaProduto">Kits Banho:</p>
+<div class="carousel-container">
+    <!-- Botões laterais -->
+    <button class="carousel-btn btn-left" onclick="movekitbanho(-1)">&#10094;</button>
+    <button class="carousel-btn btn-right" onclick="movekitbanho(1)">&#10095;</button>
+
+    <div class="carousel-track" id="carouselTrackkitbanho">
+        <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1173-AZ.webp" alt="Produto">
+            <h3>Kits Banho</h3>
+            <p>
+              Fundo do Mar
+              3 Itens
+              1 Pente
+              1 Escova
+              1 Saboneteira
+              EAN:
+              7898012498563
+            </p>
+            <p><b>Código:</b> 7930-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Kits Banho', '7930-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7931-RS.webp" alt="Produto">
+            <h3>Kit Banho</h3>
+            <p>
+              Fundo do Mar
+              3 Itens
+              1 Pente
+              1 Escova
+              1 Saboneteira
+              EAN:
+              7898012498570
+            </p>
+            <p><b>Código:</b> 7931-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Kit Banho', '7931-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7841.webp" alt="Produto">
+            <h3>Escova e Pente Filhotes</h3>
+            <p> 
+              2 Itens
+              1 Pente
+              1 Escova
+              EAN:
+              7898012498532
+            </p>
+            <p><b>Código:</b> 7841</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Escova e Pente Filhotes', '7841', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7840.webp" alt="Produto">
+            <h3> Pente e escova Filhotes</h3>
+            <p> 
+              2 Itens
+              1 Pente
+              1 Escova
+              EAN:
+              7898012498525
+            </p>
+            <p><b>Código:</b> 7840</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Pente e escova Filhotes', '7840', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7820.webp" alt="Produto">
+            <h3>Escova e Pente Chérie</h3>
+            <p>
+              2 Itens
+              1 Pente
+              1 Escova
+              EAN:
+              7898012498495
+            </p>
+            <p><b>Código:</b> 7820</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Escova e Pente Chérie', '7820', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7810.webp" alt="Produto">
+            <h3>Escova e Pente Duke</h3>
+            <p>
+              2 Itens
+              1 Pente
+              1 Escova
+              EAN:
+              7898012498488
+            </p>
+            <p><b>Código:</b> 7810</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Escova e Pente Duke', '7810', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7851-RS.webp" alt="Produto">
+            <h3>Escova e Pente Urso</h3>
+            <p>
+              2 Itens
+              1 Pente
+              1 Escova
+              EAN: 
+              7898012496866
+            </p>
+            <p><b>Código:</b> 7851-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Escova e Pente Urso', '7851-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7850-AZ.webp" alt="Produto">
+            <h3>Escova e Pente Urso</h3>
+            <p>
+              2 Itens
+              1 Pente
+              1 Escova
+              EAN:
+              7898012497610
+            </p>
+            <p><b>Código:</b> 7850-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Escova e Pente Urso', '7850-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1160-RS.webp" alt="Produto">
+            <h3>Escova e Pente</h3>
+            <p> 
+              2 Itens
+              1 Pente
+              1 Escova
+              EAN: 
+              7898012496101
+            </p>
+            <p><b>Código:</b> 1160-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Escova e Pente', '1160-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1160-AZ.webp" alt="Produto">
+            <h3>Escova e Pente</h3>
+            <p>
+              2 Itens
+              1 Pente
+              1 Escova
+              EAN: 
+              7898012496095
+            </p>
+            <p><b>Código:</b> 1160-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Escova e Pente', '1160-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1161-RS.webp" alt="Produto">
+            <h3>Escova e Pente</h3>
+            <p> 
+              2 Itens
+              1 Pente
+              1 Escova
+              EAN: 
+              7898012495401
+            </p>
+            <p><b>Código:</b> 1161-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Escova e Pente', '1161-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1161-AZ.webp" alt="Produto">
+            <h3>Escova e Pente</h3>
+            <p>
+              2 Itens
+              1 Pente
+              1 Escova
+              EAN: 
+              7898012495395
+            </p>
+            <p><b>Código:</b> 1161-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Escova e Pente', '1161-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7830-AZ.webp" alt="Produto">
+            <h3>Escova e Pente Fundo do Mar</h3>
+            <p> 
+              2 Itens
+              1 Pente
+              1 Escova
+              EAN: 
+              7898012498501
+            </p>
+            <p><b>Código:</b> 7830-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart(' Escova e Pente Fundo do Mar', '7830-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/7831-RS.webp" alt="Produto">
+            <h3>Escova e Pente Fundo do Mar</h3>
+            <p>
+              2 Itens
+              1 Pente
+              1 Escova
+              EAN:
+              7898012498518
+            </p>
+            <p><b>Código:</b> 7831-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Escova e Pente Fundo do Mar', '7831-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1172-RS.webp" alt="Produto">
+            <h3>Saboneteira Chérie</h3>
+            <p>
+              1 Item
+              EAN: 7898012490811
+            </p>
+            <p><b>Código:</b> 1172-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Saboneteira Chérie', '1172-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1171-AZ.webp" alt="Produto">
+            <h3>Saboneteira Duke</h3>
+            <p>  | 1 Item
+              EAN: 7898012490798
+            </p>
+            <p><b>Código:</b> 1171-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Saboneteira Duke', '1171-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1173-RS.webp" alt="Produto">
+            <h3>Saboneteira Carrossel</h3>
+            <p>
+              |1 Item
+              EAN: 7898012490835
+            </p>
+            <p><b>Código:</b> 1173-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Saboneteira Carrossel', '1173-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1173-AZ.webp" alt="Produto">
+            <h3>Saboneteira Estrela</h3>
+            <p>
+              1 Item
+              EAN: 7898012490798
+            </p>
+            <p><b>Código:</b> 1173-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Saboneteira Estrela', '1173-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+    </div>
+</div>
+<script>
+// Lógica simples do carrossel
+let kitbanho = 0;
+function movekitbanho(direction) {
+    const track = document.getElementById("carouselTrackkitbanho");
+    const cardWidth = track.children[0].offsetWidth + 20; // largura + gap
+    const maxIndex = track.children.length - 1;
+
+    kitbanho += direction;
+
+    if (kitbanho < 0) kitbanho = 0;
+    if (kitbanho > maxIndex) kitbanho = maxIndex;
+
+    track.style.transform = `translateX(${-kitbanho * cardWidth}px)`;
+}
+</script>
+
+
+<!-- ====================== Saboneteiras ======================= -->
+<p class="categoriaProduto">Saboneteiras:</p>
+<div class="carousel-container">
+    <!-- Botões laterais -->
+    <button class="carousel-btn btn-left" onclick="moveSaboneteira(-1)">&#10094;</button>
+    <button class="carousel-btn btn-right" onclick="moveSaboneteira(1)">&#10095;</button>
+
+    <div class="carousel-track" id="carouselTrackSaboneteira">
+        <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1173-AZ.webp" alt="Produto">
+            <h3>Saboneteira Nautíco</h3>
+            <p>
+              EAN: 7898012490811
+            </p>
+            <p><b>Código:</b> 1173-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Saboneteira Nautíco', '1173-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1169-RS.webp" alt="Produto">
+            <h3>Saboneteira Anplas</h3>
+            <p>
+              EAN: 7898012490710
+            </p>
+            <p><b>Código:</b> 1169-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Saboneteira Anplas', '1169-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1169-AZ.webp" alt="Produto">
+            <h3>Saboneteira Anplas</h3>
+            <p>
+              EAN: 7898012493445
+            </p>
+            <p><b>Código:</b>  1169-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Saboneteira Anplas', '1169-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1169-AM.webp" alt="Produto">
+            <h3>Saboneteira Nautíco</h3>
+            <p>
+              EAN: 7898012490811
+            </p>
+            <p><b>Código:</b> 1169-AM</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Kits Banho', '1169-AM', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1169-LR.webp" alt="Produto">
+            <h3>Saboneteira Anplas</h3>
+            <p>
+              EAN: 7898012490802
+            </p>
+            <p><b>Código:</b> 1169-LR</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Saboneteira Anplas', '1169-LR', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+        
+    </div>
+</div>
+<script>
+// Lógica simples do carrossel
+let Saboneteira = 0;
+function moveSaboneteira(direction) {
+    const track = document.getElementById("carouselTrackSaboneteira");
+    const cardWidth = track.children[0].offsetWidth + 20; // largura + gap
+    const maxIndex = track.children.length - 1;
+
+    Saboneteira += direction;
+
+    if (Saboneteira < 0) Saboneteira = 0;
+    if (Saboneteira > maxIndex) Saboneteira = maxIndex;
+
+    track.style.transform = `translateX(${-Saboneteira * cardWidth}px)`;
+}
+</script>
+
+
+
+<!-- ====================== Acessórios ======================= -->
+<p class="categoriaProduto">Acessórios:</p>
+<div class="carousel-container">
+    <!-- Botões laterais -->
+    <button class="carousel-btn btn-left" onclick="moveAcessorios(-1)">&#10094;</button>
+    <button class="carousel-btn btn-right" onclick="moveAcessorios(1)">&#10095;</button>
+
+    <div class="carousel-track" id="carouselTrackAcessorios">
+        <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1120-RS.webp" alt="Produto">
+            <h3>Kit Manicure</h3>
+            <p>
+              EAN: 7898012495302
+            </p>
+            <p><b>Código:</b> 1120-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Kit Manicure', '1120-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1110-AZ.webp" alt="Produto">
+            <h3>Kit Manicure</h3>
+            <p>
+              EAN: 7898012495296
+            </p>
+            <p><b>Código:</b> 1110-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Kit Manicure', '1110-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1170-RS.webp" alt="Produto">
+            <h3>Escova Dupla Ação</h3>
+            <p>
+              Limpa Bicos e Mamadeira
+              EAN: 7898012496163
+            </p>
+            <p><b>Código:</b> 1170-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Escova Dupla Ação', '1170-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1170-AZ.webp" alt="Produto">
+            <h3>Escova Dupla Ação</h3>
+            <p>
+              Limpa Bicos e Mamadeira
+              EAN: 7898012496156
+            </p>
+            <p><b>Código:</b> 1170-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Escova Dupla Ação', '1170-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1195-AZ.webp" alt="Produto">
+            <h3>Aspirador Nasal</h3>
+            <p>
+              EAN: 7898012496248
+            </p>
+            <p><b>Código:</b> 1195-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Aspirador Nasal', '1195-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+        
+    </div>
+</div>
+<script>
+// Lógica simples do carrossel
+let Acessorios = 0;
+function moveAcessorios(direction) {
+    const track = document.getElementById("carouselTrackAcessorios");
+    const cardWidth = track.children[0].offsetWidth + 20; // largura + gap
+    const maxIndex = track.children.length - 1;
+
+    Acessorios += direction;
+
+    if (Acessorios < 0) Acessorios = 0;
+    if (Acessorios > maxIndex) Acessorios = maxIndex;
+
+    track.style.transform = `translateX(${-Acessorios * cardWidth}px)`;
+}
+</script>
+
+
+
+<!-- ====================== Vila Toy ======================= -->
+<p class="categoriaProduto">Vila Toy:</p>
+<div class="carousel-container">
+    <!-- Botões laterais -->
+    <button class="carousel-btn btn-left" onclick="moveToy(-1)">&#10094;</button>
+    <button class="carousel-btn btn-right" onclick="moveToy(1)">&#10095;</button>
+
+    <div class="carousel-track" id="carouselTrackToy">
+        <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/100-042.webp" alt="Produto">
+            <h3>MORDEDOR</h3>
+            <p> 
+              VILA TOY MAOZINHA
+            </p>
+            <p><b>Código:</b> 100-042</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('MORDEDOR', '100-042', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/100-041.webp" alt="Produto">
+            <h3>MORDEDOR</h3>
+            <p>
+              VILA TOY MAOZINHA
+            </p>
+            <p><b>Código:</b> 100-041</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('MORDEDOR', '100-041', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/100-052.webp" alt="Produto">
+            <h3>MORDEDOR</h3>
+            <p>
+              VILA TOY PEZINHO
+            </p>
+            <p><b>Código:</b> 100-052</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('MORDEDOR', '100-052', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/0300973-01.webp" alt="Produto">
+            <h3>MORDEDOR</h3>
+            <p>
+              VILA TOY PEZINHO
+            </p>
+            <p><b>Código:</b> 100-051</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('MORDEDOR', '100-051', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/0300974-01.webp" alt="Produto">
+            <h3>MORDEDOR</h3>
+            <p>
+              VILA TOY CHOCALHO
+              CACHORRO
+            </p>
+            <p><b>Código:</b> 100-311</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('MORDEDOR', '100-311', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/ 100-312.webp" alt="Produto">
+            <h3>MORDEDOR</h3>
+            <p>
+              VILA TOY CHOCALHO
+              CACHORRO
+            </p>
+            <p><b>Código:</b> 100-312</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('MORDEDOR', '100-312', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/2451.webp" alt="Produto">
+            <h3>RELÓGIO REPELENTE</h3>
+            <p>RELÓGIO REPELENTE 
+              AMARELO
+            </p>
+            <p><b>Código:</b> 2451</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('RELÓGIO REPELENTE', '2451', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/94741.webp" alt="Produto">
+            <h3>RELÓGIO REPELENTE</h3>
+            <p> 
+              LARANJA 
+            </p>
+            <p><b>Código:</b> 2451</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('RELÓGIO REPELENTE', '2451', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/94721.webp" alt="Produto">
+            <h3>RELÓGIO REPELENTE</h3>
+            <p> 
+              AZUL
+            </p>
+            <p><b>Código:</b> 2451</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('RELÓGIO REPELENTE', '2451', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/24513.webp" alt="Produto">
+            <h3>RELÓGIO REPELENTE</h3>
+            <p> 
+              VERDE
+            </p>
+            <p><b>Código:</b> 2451</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('RELÓGIO REPELENTE', '2451', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/2406.webp" alt="Produto">
+            <h3>SERINGA DE LAVAGEM NASAL</h3>
+            <p>
+              VILA TOY COELHO
+              2406
+            </p>
+            <p><b>Código:</b> 2406</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('SERINGA DE LAVAGEM NASAL', '2406', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/2420.webp" alt="Produto">
+            <h3>SERINGA DE LAVAGEM NASAL</h3>
+            <p>
+                VILA TOY PINTINHO
+            </p>
+            <p><b>Código:</b> 2420</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('SERINGA DE LAVAGEM NASAL', '2420', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+        
+    </div>
+</div>
+<script>
+// Lógica simples do carrossel
+let Toy = 0;
+function moveToy(direction) {
+    const track = document.getElementById("carouselTrackToy");
+    const cardWidth = track.children[0].offsetWidth + 20; // largura + gap
+    const maxIndex = track.children.length - 1;
+
+    Toy += direction;
+
+    if (Toy < 0) Toy = 0;
+    if (Toy > maxIndex) Toy = maxIndex;
+
+    track.style.transform = `translateX(${-Toy * cardWidth}px)`;
+}
+</script>
+
+
+
+<!-- ====================== Carinho a cada Passo ======================= -->
+<p class="categoriaProduto">Carinho a cada Passo:</p>
+<div class="carousel-container">
+    <!-- Botões laterais -->
+    <button class="carousel-btn btn-left" onclick="moveCadaPaso(-1)">&#10094;</button>
+    <button class="carousel-btn btn-right" onclick="moveCadaPaso(1)">&#10095;</button>
+
+    <div class="carousel-track" id="carouselTrackCadaPaso">
+        <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/0025401.webp" alt="Produto">
+            <h3>COPO TREINAMENTO 360 C/ALÇA S/TAMPA</h3>
+            <p>
+              UNISSEX 210ML
+            </p>
+            <p><b>Código:</b> 0025401</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('COPO TREINAMENTO 360 C/ALÇA S/TAMPA', '0025401', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/0300253-01.webp" alt="Produto">
+            <h3>COPO TREINAMENTO 360 C/ALÇA S/TAMPA</h3>
+            <p>
+              AZUL 210ML
+            </p>
+            <p><b>Código:</b> 0300253-01</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('COPO TREINAMENTO 360 C/ALÇA S/TAMPA', '0300253-01', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/0300252-01.webp" alt="Produto">
+            <h3>COPO TREINAMENTO 360 C/ALÇA S/TAMPA</h3>
+            <p>
+              ROSA 210ML
+            </p>
+            <p><b>Código:</b> 0300252-01</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('COPO TREINAMENTO 360 C/ALÇA S/TAMPA', '0300252-01', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/0300973-01.webp" alt="Produto">
+            <h3>COPO DIVERTIDO COM HELICE - DOCES ROSA 330ML</h3>
+            <p>
+            </p>
+            <p><b>Código:</b>0300973-01</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('COPO DIVERTIDO COM HELICE - DOCES ROSA 330ML', '0300973-01', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/0300974-01.webp" alt="Produto">
+            <h3>COPO DIVERTIDO COM HELICE - DOCES</h3>
+            <p>
+              AZUL 330ML
+            </p>
+            <p><b>Código:</b>0300974-01</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('COPO DIVERTIDO COM HELICE - DOCES', '0300974-01', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/0300780-01.webp" alt="Produto">
+            <h3>GARRAFA DE ALUMÍNIO</h3>
+            <p>
+              GIRAFA ROSA 500ML
+            </p>
+            <p><b>Código:</b>0300780-01</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('GARRAFA DE ALUMÍNIO', '0300780-01', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/0300782-01.webp" alt="Produto">
+            <h3>GARRAFA DE ALUMÍNIO LEÃO</h3>
+            <p>
+              VERDE 500ML
+            </p>
+            <p><b>Código:</b> 0300782-01</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('GARRAFA DE ALUMÍNIO LEÃO', '0300782-01', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/94741.webp" alt="Produto">
+            <h3>GARRAFA TÉRMICA INOX C/ CANUDO</h3>
+            <p> 
+              UNISSEX LARANJA 400ML
+            </p>
+            <p><b>Código:</b> 94741</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('GARRAFA TÉRMICA INOX C/ CANUDO', '94741', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/94721.webp" alt="Produto">
+            <h3>GARRAFA TÉRMICA INOX C/ CANUDO</h3>
+            <p> 
+              ROXA 400ML
+            </p>
+            <p><b>Código:</b> 94721</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('GARRAFA TÉRMICA INOX C/ CANUDO', '94721', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/94731.webp" alt="Produto">
+            <h3>GARRAFA TÉRMICA INOX C/ CANUDO</h3>
+            <p> 
+              MASC 400ML
+            </p>
+            <p><b>Código:</b> 94731</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('GARRAFA TÉRMICA INOX C/ CANUDO', '94731', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+        
+    </div>
+</div>
+<script>
+// Lógica simples do carrossel
+let CadaPaso = 0;
+function moveCadaPaso(direction) {
+    const track = document.getElementById("carouselTrackCadaPaso");
+    const cardWidth = track.children[0].offsetWidth + 20; // largura + gap
+    const maxIndex = track.children.length - 1;
+
+    CadaPaso += direction;
+
+    if (CadaPaso < 0) CadaPaso = 0;
+    if (CadaPaso > maxIndex) CadaPaso = maxIndex;
+
+    track.style.transform = `translateX(${-CadaPaso * cardWidth}px)`;
+}
+</script>
+
+
+
+<!-- ====================== Bebê Natureza ======================= -->
+<p class="categoriaProduto">Bebê Natureza:</p>
+<div class="carousel-container">
+    <!-- Botões laterais -->
+    <button class="carousel-btn btn-left" onclick="moveNatureza(-1)">&#10094;</button>
+    <button class="carousel-btn btn-right" onclick="moveNatureza(1)">&#10095;</button>
+
+    <div class="carousel-track" id="carouselTrackNatureza">
+        <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/14774.webp" alt="Produto">
+            <h3>CONDICIONADOR BEBÊ NATUREZA 230ML</h3>
+            <p>
+            </p>
+            <p><b>Código:</b> 14774</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('CONDICIONADOR BEBÊ NATUREZA 230ML', '14774', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/14778.webp" alt="Produto">
+            <h3>KIT BEBÊ NATUREZA CACHOS E CACHINHOS SHAMPOO 120ML CONDICIONADOR 100ML CREME 100ML</h3>
+            <p>
+            </p>
+            <p><b>Código:</b> 14778</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('KIT BEBÊ NATUREZA CACHOS E CACHINHOS SHAMPOO 120ML CONDICIONADOR 100ML CREME 100ML', '14778', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/14779.webp" alt="Produto">
+            <h3>CREME BEBÊ NATUREZA 250ML</h3>
+            <p>
+            </p>
+            <p><b>Código:</b> 14779</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('CREME BEBÊ NATUREZA 250ML', '14779', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/14773.webp" alt="Produto">
+            <h3>SHAMPOO BEBÊ NATUREZA 230ML</h3>
+            <p>
+            </p>
+            <p><b>Código:</b>14773</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('SHAMPOO BEBÊ NATUREZA 230ML', '14773', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/14796.webp" alt="Produto">
+            <h3>KIT BEBÊ NATUREZA SUAVE SHAMPOO 230 ML CONDICIONADOR 200ML</h3>
+            <p>
+            </p>
+            <p><b>Código:</b>14796</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('KIT BEBÊ NATUREZA SUAVE SHAMPOO 230 ML CONDICIONADOR 200ML', '14796', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/14797.webp" alt="Produto">
+            <h3>TALCO BEBÊ NATUREZA 200G</h3>
+            <p>
+            </p>
+            <p><b>Código:</b>14797</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('TALCO BEBÊ NATUREZA 200G', '14797', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/14787.webp" alt="Produto">
+            <h3>COLÔNIA BEBÊ NATUREZA 120ML</h3>
+            <p>
+            </p>
+            <p><b>Código:</b> 14787</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('COLÔNIA BEBÊ NATUREZA 120ML', '14787', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/14795.webp" alt="Produto">
+            <h3>KIT BEBÊ NATUREZA SUAVE SHAMPOO 230ML CONDICIONADOR 230ML COLÔNIA 100ML</h3>
+            <p> 
+            </p>
+            <p><b>Código:</b> 14795</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('KIT BEBÊ NATUREZA SUAVE SHAMPOO 230ML CONDICIONADOR 230ML COLÔNIA 100ML', '14795', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/14786.webp" alt="Produto">
+            <h3>LOÇÃO HIDRATANTE BEBÊ NATUREZA 230ML</h3>
+            <p>
+            </p>
+            <p><b>Código:</b> 14786</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('LOÇÃO HIDRATANTE BEBÊ NATUREZA 230ML', '14786', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/14861.webp" alt="Produto">
+            <h3>KIT BEBÊ NATUREZA SAPINHO SHAMPOO 120ML CONDICIONADOR 100ML SABONETEIRA</h3>
+            <p>
+            </p>
+            <p><b>Código:</b> 14861</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('KIT BEBÊ NATUREZA SAPINHO SHAMPOO 120ML CONDICIONADOR 100ML SABONETEIRA', '14861', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+        
+    </div>
+</div>
+<script>
+// Lógica simples do carrossel
+let Natureza = 0;
+function moveNatureza(direction) {
+    const track = document.getElementById("carouselTrackNatureza");
+    const cardWidth = track.children[0].offsetWidth + 20; // largura + gap
+    const maxIndex = track.children.length - 1;
+
+    Natureza += direction;
+
+    if (Natureza < 0) Natureza = 0;
+    if (Natureza > maxIndex) Natureza = maxIndex;
+
+    track.style.transform = `translateX(${-Natureza * cardWidth}px)`;
+}
+</script>
+
+
+<!-- ========================== FOOTER =============================== -->
+
+<footer style="background: linear-gradient(180deg, #048061, #048061);" class="text-white pt-12 pb-6 px-4">
+    <div class="container mx-auto">
+
+        <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
+            <div class="md:w-1/3">
+                <h3 class="text-xl font-bold mb-4">A MABABY</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html#Historia" class="hover:text-yellow-500">Quem Somos</a></li>
+                    <li><a href="index.html#Notícia" class="hover:text-yellow-500">Notícias</a></li>
+                    <li><a href="index.html#Contato" class="hover:text-yellow-500">Contato</a></li>
+                    <li><a href="index.html#Jobs" class="hover:text-yellow-500">Trabalhe Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="md:w-1/3">
+                <h3 class="text-xl font-bold mb-4">Atendimento</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-start"><i class="fas fa-phone-alt mt-1 mr-2 text-yellow-500"></i> +55 14 99814-0452</li>
+                    <li class="flex items-start"><i class="fas fa-envelope mt-1 mr-2 text-yellow-500"></i> MABABY@gmail.com.br</li>
+                    <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-2 text-yellow-500"></i> Endereço definir</li>
+                    <li class="flex items-start"><i class="fas fa-clock mt-1 mr-2 text-yellow-500"></i> Seg–Sex: 8h às 18h</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="border-white my-6">
+
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <p>© 2025 MABABY – Todos os direitos reservados</p>
+            <span>Desenvolvido por: <a target="_blank" href="https://www.instagram.com/vm_software/">vm_software</a></span>
+
+            <div class="flex space-x-4">
+                <a target="_blank" href="https://api.whatsapp.com/send/?phone=5514998140452" class="hover:text-yellow-500"><i class="fab fa-whatsapp fa-lg"></i></a>
+                <a target="_blank" href="https://www.instagram.com/mababydistribuidora/" class="hover:text-yellow-500"><i class="fab fa-instagram fa-lg"></i></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- load de itens no carronho-->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const itens = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const cartCount = document.querySelector('.cart-count');
+
+    if (cartCount) {
+      cartCount.innerText = itens.length;
+
+      // opcional: esconder quando estiver vazio
+      if (itens.length === 0) {
+        cartCount.style.display = 'none';
+      }
+    }
+  });
+</script>
+<!-- finção para gerar o arrey no local storage-->
+<script>
+  // Função que você implementará depois
+  let array = [];
+function addToCart(nome, codigo, quantidade) {
+  // Carrega carrinho ou cria vazio
+  let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+  // Verifica se o produto já existe
+  const itemExistente = cartItems.find(item => item.codigo === codigo);
+
+  if (itemExistente) {
+    // soma quantidade
+    let atual = parseInt(itemExistente.quantidade);
+    let newValue = parseInt(quantidade);
+    quantidade = atual + newValue;
+    itemExistente.quantidade = quantidade;
+  } else {
+    // adiciona novo
+    cartItems.push({
+      nome,
+      codigo,
+      quantidade
+    });
+  }
+
+  // Salva no localStorage
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+  console.log("Carrinho atualizado:", cartItems);
+}
+
+</script>
+
+</body>
+</html>
