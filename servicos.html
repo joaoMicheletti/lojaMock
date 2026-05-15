@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Serviços | YES Consult</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #000;
+            overflow-x: hidden;
+        }
+
+        .service-image::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        }
+
+        .blur-effect {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(234, 179, 8, 0.08);
+            filter: blur(120px);
+            border-radius: 999px;
+            z-index: 0;
+        }
+
+        .fade-up {
+            animation: fadeUp 1s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+
+        <div style="background: linear-gradient(180deg, #000000, #000000cc);" class="text-white py-1 px-4">
+
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+
+                <div class="flex items-center mb-2 md:mb-0">
+                    <a href="index.html">
+                        <img src="assets/logoHeader.webp" alt="YES Consult Logo" class="h-6">
+                    </a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-sm hover:text-yellow-500 transition duration-300">
+                        Home
+                    </a>
+
+                    <a href="index.html#faq" class="text-sm hover:text-yellow-500 transition duration-300">
+                        Dúvidas
+                    </a>
+
+                    <a href="index.html" class="text-sm hover:text-yellow-500 transition duration-300">
+                        Contato
+                    </a>
+                </div>
+
+                <div class="flex items-center space-x-4 mt-2 md:mt-0">
+
+                    <a target="_blank" href="https://www.instagram.com/yescsolutions/"
+                        class="text-white hover:text-yellow-500 transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden py-28 px-6 text-white">
+
+        <div class="blur-effect top-[-150px] left-[-100px]"></div>
+        <div class="blur-effect bottom-[-200px] right-[-100px]"></div>
+
+        <div class="container mx-auto relative z-10 text-center fade-up">
+
+            <span class="uppercase tracking-[0.3em] text-yellow-500 text-sm">
+                Soluções Inteligentes
+            </span>
+
+            <h1 class="text-5xl md:text-7xl font-bold mt-6 leading-tight">
+                Tecnologia para acelerar
+                <span class="text-yellow-500">resultados reais</span>
+            </h1>
+
+            <p class="max-w-3xl mx-auto text-gray-300 mt-8 text-lg leading-relaxed">
+                Desenvolvemos soluções modernas e estratégicas para empresas que desejam crescer através da tecnologia,
+                automação e inovação.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- SERVICES -->
+    <section class="relative py-20 px-6 text-white">
+
+        <div class="container mx-auto space-y-32">
+
+            <!-- SERVICE 1-->
+            <div class="grid md:grid-cols-2 gap-14 items-center fade-up">
+
+                <div class="relative service-image overflow-hidden rounded-3xl">
+                    <img src="assets/site.webp"
+                        class="w-full h-[450px] object-cover transition duration-700 hover:scale-105"
+                        alt="Desenvolvimento de Sites">
+                </div>
+
+                <div>
+
+                    <span class="text-yellow-500 uppercase tracking-[0.2em] text-sm">
+                        Website
+                    </span>
+
+                    <h2 class="text-4xl font-bold mt-4 mb-6">
+                        Desenvolvimento de Sites
+                    </h2>
+
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                        Desenvolvemos sites modernos, rápidos e estratégicos para fortalecer sua presença digital e
+                        gerar mais resultados.
+                    </p>
+
+                    <ul class="space-y-4 text-gray-300">
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            Layout moderno e responsivo
+                        </li>
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            Alta performance e SEO
+                        </li>
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            Estrutura focada em conversão
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- SERVICE 2 -->
+            <div class="grid md:grid-cols-2 gap-14 items-center fade-up">
+
+                <div class="order-2 md:order-1">
+
+                    <span class="text-yellow-500 uppercase tracking-[0.2em] text-sm">
+                        Logística
+                    </span>
+
+                    <h2 class="text-4xl font-bold mt-4 mb-6">
+                        Gestão Logística Inteligente
+                    </h2>
+
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                        Otimizamos processos logísticos para aumentar eficiência, reduzir custos e garantir uma
+                        operação mais inteligente.
+                    </p>
+
+                    <ul class="space-y-4 text-gray-300">
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            Automatização operacional
+                        </li>
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            Controle inteligente de processos
+                        </li>
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            Redução de falhas operacionais
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="relative service-image overflow-hidden rounded-3xl order-1 md:order-2">
+                    <img src="assets/log.webp"
+                        class="w-full h-[450px] object-cover transition duration-700 hover:scale-105"
+                        alt="Logística">
+                </div>
+
+            </div>
+
+            <!-- SERVICE 3-->
+            <div class="grid md:grid-cols-2 gap-14 items-center fade-up">
+
+                <div class="relative service-image overflow-hidden rounded-3xl">
+                    <img src="assets/ecomercce.webp"
+                        class="w-full h-[450px] object-cover transition duration-700 hover:scale-105"
+                        alt="Desenvolvimento de Sites">
+                </div>
+
+                <div>
+
+                    <span class="text-yellow-500 uppercase tracking-[0.2em] text-sm">
+                        Consultoria E-commerce
+                    </span>
+
+                    <h2 class="text-4xl font-bold mt-4 mb-6">
+                        Estratégias para escalar suas vendas online
+                    </h2>
+
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                        Ajudamos empresas a estruturarem operações digitais mais eficientes, aumentando conversão, 
+                        escalabilidade e performance em vendas online através de estratégias inteligentes e tecnologia.
+                    </p>
+
+                    <ul class="space-y-4 text-gray-300">
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            Estratégias focadas em conversão
+                        </li>
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            Otimização da jornada de compra
+                        </li>
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            Escalabilidade operacional
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- SERVICE 4 -->
+            <div class="grid md:grid-cols-2 gap-14 items-center fade-up">
+
+                <div class="order-2 md:order-1">
+
+                    <span class="text-yellow-500 uppercase tracking-[0.2em] text-sm">
+                        Desenvolvimento de Aplicativos e Sistemas
+                    </span>
+
+                    <h2 class="text-4xl font-bold mt-4 mb-6">
+                        Tecnologia personalizada para sua operação
+                    </h2>
+
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                        Desenvolvemos aplicativos e sistemas personalizados para automatizar processos, integrar 
+                        operações e proporcionar mais eficiência, controle e inovação para empresas.
+                    </p>
+
+                    <ul class="space-y-4 text-gray-300">
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            Soluções modernas e escaláveis
+                        </li>
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            Automação de processos operacionais
+                        </li>
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            Integração entre setores e sistemas
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="relative service-image overflow-hidden rounded-3xl order-1 md:order-2">
+                    <img src="assets/sistem.webp"
+                        class="w-full h-[450px] object-cover transition duration-700 hover:scale-105"
+                        alt="Logística">
+                </div>
+
+            </div>
+
+            <!-- GRID -->
+            <div class="grid md:grid-cols-3 gap-8 fade-up">
+
+                <!-- CARD -->
+                <div
+                    class="bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-yellow-500 hover:-translate-y-2 transition duration-500">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-yellow-500/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-truck text-yellow-500 text-2xl"></i>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Transporte
+                    </h3>
+
+                    <p class="text-gray-300 leading-relaxed">
+                        Soluções completas em transporte para garantir agilidade, segurança e controle em cada etapa da entrega.
+                    </p>
+
+                </div>
+
+                <!-- CARD -->
+                <div
+                    class="bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-yellow-500 hover:-translate-y-2 transition duration-500">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-yellow-500/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-shopping-cart text-yellow-500 text-2xl"></i>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Consultoria E-commerce
+                    </h3>
+
+                    <p class="text-gray-300 leading-relaxed">
+                        Estratégias focadas em conversão, crescimento e performance de vendas para escalar seu e-commerce.
+                    </p>
+
+                </div>
+
+                <!-- CARD -->
+                <div
+                    class="bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-yellow-500 hover:-translate-y-2 transition duration-500">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-yellow-500/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-screen text-yellow-500 text-2xl"></i>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">
+                        Aplicativos & Software
+                    </h3>
+
+                    <p class="text-gray-300 leading-relaxed">
+                        Criamos aplicativos e sistemas sob medida para automatizar processos e integrar operações.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 px-6 text-white relative overflow-hidden">
+
+        <div class="container mx-auto text-center fade-up">
+
+            <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                Vamos transformar sua empresa com
+                <span class="text-yellow-500">tecnologia?</span>
+            </h2>
+
+            <p class="text-gray-300 max-w-2xl mx-auto text-lg mb-10">
+                Entre em contato com nossa equipe e descubra como podemos impulsionar seus resultados.
+            </p>
+
+            <a target="_blank"
+                href="https://api.whatsapp.com/send/?phone=5511933766883"
+                class="inline-flex items-center bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-8 py-4 rounded-full transition duration-300">
+
+                Falar com Especialista
+                <i class="fas fa-arrow-right ml-3"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background: linear-gradient(180deg, #000000, #000000);" class="text-white pt-12 pb-6 px-4">
+
+        <div class="container mx-auto">
+
+            <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
+
+                <div class="md:w-1/3">
+
+                    <h3 class="text-xl font-bold mb-4 text-white">
+                        A YES CONSULT
+                    </h3>
+
+                    <ul class="space-y-2">
+
+                        <li>
+                            <a href="index.html#Historia"
+                                class="hover:text-yellow-500 transition duration-300">
+                                Quem Somos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#Notícia"
+                                class="hover:text-yellow-500 transition duration-300">
+                                Notícias
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#Contato"
+                                class="hover:text-yellow-500 transition duration-300">
+                                Contato
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#Jobs"
+                                class="hover:text-yellow-500 transition duration-300">
+                                Trabalhe Conosco
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="md:w-1/3">
+
+                    <h3 class="text-xl font-bold mb-4 text-white">
+                        Atendimento ao Cliente
+                    </h3>
+
+                    <ul class="space-y-2">
+
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2 text-yellow-500"></i>
+                            <span>+55 11 93376-6883</span>
+                        </li>
+
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-yellow-500"></i>
+                            <span>contato@yesconexoes.com</span>
+                        </li>
+
+                        <li class="flex items-start">
+                            <i class="fas fa-clock mt-1 mr-2 text-yellow-500"></i>
+                            <span>Segunda a Sexta: 8h às 18h</span>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <hr class="border-white my-6">
+
+            <div class="flex flex-col md:flex-row justify-between items-center">
+
+                <div class="mb-4 md:mb-0">
+                    <p>© 2025 Yes Consult – Todos os direitos reservados</p>
+                </div>
+
+                <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                    <span>
+                        Desenvolvido por:
+                        <a href="https://www.instagram.com/vm_software/" target="_blank">
+                            vm_software
+                        </a>
+                    </span>
+                </div>
+
+                <div class="flex space-x-4">
+
+                    <a target="_blank"
+                        href="https://api.whatsapp.com/send/?phone=5511933766883"
+                        class="text-white hover:text-yellow-500 transition duration-300">
+
+                        <i class="fab fa-whatsapp fa-lg"></i>
+
+                    </a>
+
+                    <a target="_blank"
+                        href="https://www.instagram.com/yescsolutions/"
+                        class="text-white hover:text-yellow-500 transition duration-300">
+
+                        <i class="fab fa-instagram fa-lg"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
